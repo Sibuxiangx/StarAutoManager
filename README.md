@@ -93,7 +93,7 @@ Edit `config.yaml` to adjust behavior:
 
 ```yaml
 llm:
-  model: "gpt-4o-mini"   # Model name (can also be overridden via LLM_MODEL secret)
+  model: "gpt-5.4"   # Model name (can also be overridden via LLM_MODEL secret)
   temperature: 0.3       # Lower = more consistent categorization
   batch_size: 20          # Repos per LLM call
   language: "en"          # Prompt language: "en" or "zh"
@@ -130,7 +130,7 @@ github:
 
 llm:
   # base_url and api_key MUST be set via GitHub Secrets (not here)
-  model: "gpt-4o-mini"     # Model name (can also override via LLM_MODEL secret)
+  model: "gpt-5.4"     # Model name (can also override via LLM_MODEL secret)
   temperature: 0.3          # 0.1-0.4 recommended for stable categorization
   max_tokens: 4096          # Max tokens per LLM call
   batch_size: 20            # Repos per batch
@@ -229,17 +229,20 @@ Any OpenAI-compatible API endpoint works:
 
 | Provider | `LLM_BASE_URL` | Recommended Model |
 |----------|-----------------|-------------------|
-| OpenAI | `https://api.openai.com/v1` | `gpt-4o-mini` |
+| OpenAI | `https://api.openai.com/v1` | `gpt-5.4` |
 | DeepSeek | `https://api.deepseek.com` | `deepseek-chat` |
-| Anthropic (via proxy) | varies | `claude-3-haiku` |
-| Ollama (local) | `http://localhost:11434/v1` | `llama3` |
+| Anthropic (via proxy) | varies | `claude-haiku-4-5` |
+| Google Gemini | `https://generativelanguage.googleapis.com/v1beta/openai/` | `gemini-2.5-flash-lite` |
+| MiniMax | `https://api.minimaxi.com/v1` | `MiniMax-M2.5` |
+| GLM / Zhipu | `https://open.bigmodel.cn/api/paas/v4` | `glm-5` |
+| Ollama (local) | `http://localhost:11434/v1` | `qwen3.5` |
 | Any OpenAI-compatible | your endpoint | your model |
 
 ## Limitations
 
 - **GitHub Star Lists maximum**: 32 lists per user (GitHub hard limit)
 - **GraphQL API rate limit**: 5,000 points/hour — the tool monitors and waits automatically
-- **LLM accuracy**: Results depend on model quality; `gpt-4o-mini` or `deepseek-chat` recommended
+- **LLM accuracy**: Results depend on model quality; `gpt-5.4` or `deepseek-chat` recommended
 - **Cold start**: First run without existing lists produces broader categories
 
 ## License

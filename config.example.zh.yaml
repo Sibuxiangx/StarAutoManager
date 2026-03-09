@@ -11,7 +11,7 @@ github:
 
 llm:
   # base_url 和 api_key 必须通过 Secrets 传入，此处不可配置
-  model: "gpt-4o-mini"     # 模型名称（也可通过 Secret LLM_MODEL 覆盖）
+  model: "gpt-5.4"         # 模型名称（也可通过 Secret LLM_MODEL 覆盖）
   temperature: 0.3          # 温度越低分类越稳定（推荐 0.1-0.4）
   max_tokens: 4096          # 单次 LLM 调用最大 token 数
   batch_size: 20            # 每次发送给 LLM 的仓库数量

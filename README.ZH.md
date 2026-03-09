@@ -87,7 +87,7 @@ cp config.example.zh.yaml config.yaml
 
 ```yaml
 llm:
-  model: "gpt-4o-mini"   # 模型名称（也可通过 LLM_MODEL secret 覆盖）
+  model: "gpt-5.4"   # 模型名称（也可通过 LLM_MODEL secret 覆盖）
   temperature: 0.3        # 温度越低分类越稳定
   batch_size: 20          # 每批发送的仓库数
   language: "zh"          # 提示语言: "en" 或 "zh"
@@ -119,17 +119,19 @@ categorization:
 
 | 提供商 | `LLM_BASE_URL` | 推荐模型 |
 |--------|-----------------|----------|
-| OpenAI | `https://api.openai.com/v1` | `gpt-4o-mini` |
+| OpenAI | `https://api.openai.com/v1` | `gpt-5.4` |
 | DeepSeek | `https://api.deepseek.com` | `deepseek-chat` |
-| MiniMax | `https://api.minimaxi.com/v1` | `MiniMax-M2.1` |
-| Ollama（本地） | `http://localhost:11434/v1` | `llama3` |
+| Google Gemini | `https://generativelanguage.googleapis.com/v1beta/openai/` | `gemini-2.5-flash-lite` |
+| MiniMax | `https://api.minimaxi.com/v1` | `MiniMax-M2.5` |
+| GLM / 智谱 | `https://open.bigmodel.cn/api/paas/v4` | `glm-5` |
+| Ollama（本地） | `http://localhost:11434/v1` | `qwen3.5` |
 | 其他兼容接口 | 你的地址 | 你的模型 |
 
 ## 限制
 
 - **Star Lists 上限**：每个用户最多 32 个列表（GitHub 硬限制）
 - **GraphQL API 速率**：5,000 点/小时 — 工具自动监控并等待
-- **LLM 准确性**：取决于模型质量，推荐 `gpt-4o-mini` 或 `deepseek-chat`
+- **LLM 准确性**：取决于模型质量，推荐 `gpt-5.4` 或 `deepseek-chat`
 - **冷启动**：首次运行（无已有列表）会产生较宽泛的分类
 
 ## 项目结构

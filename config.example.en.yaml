@@ -11,7 +11,7 @@ github:
 
 llm:
   # base_url and api_key MUST be set via Secrets — cannot be configured here
-  model: "gpt-4o-mini"     # Model name (can also override via LLM_MODEL secret)
+  model: "gpt-5.4"         # Model name (can also override via LLM_MODEL secret)
   temperature: 0.3          # Lower = more consistent categorization (recommend 0.1-0.4)
   max_tokens: 4096          # Max tokens per LLM call
   batch_size: 20            # Repos per LLM batch
